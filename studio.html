@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>blarkkeys Studio</title>
+  <meta name="description" content="Owner studio for uploading and managing blarkkeys beatstore content.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="studio-body">
+  <header class="studio-shell-header">
+    <a class="brand" href="/">
+      <span class="brand-icon">bk</span>
+      <span>
+        <strong>blarkkeys studio</strong>
+        <small>owner control room</small>
+      </span>
+    </a>
+    <nav aria-label="Studio navigation">
+      <a href="/">Public site</a>
+      <a href="#library">Library</a>
+      <button id="logoutStudio" class="nav-button" type="button">Logout</button>
+    </nav>
+  </header>
+
+  <main class="studio-main">
+    <section class="studio-hero">
+      <div>
+        <p class="section-kicker">Private studio</p>
+        <h1>Upload, license, and publish your sound.</h1>
+        <p>Everything owner-facing lives here: uploads, content settings, generated licenses, and publish status. The public website only shows content after you publish it from this studio.</p>
+      </div>
+      <div class="studio-status-card">
+        <p class="section-kicker">Access</p>
+        <h2>Owner session active</h2>
+        <p id="lockStatus" class="note">You are signed into the private studio.</p>
+      </div>
+    </section>
+
+    <section class="studio-grid">
+      <form id="uploadForm" class="studio-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">New upload</p>
+          <h2>Publish content</h2>
+        </div>
+        <label>
+          Title
+          <input name="title" placeholder="Velvet Trap Keys" required>
+        </label>
+        <div class="field-grid">
+          <label>
+            Category
+            <select name="category">
+              <option value="beats">Beats / Instrumentals</option>
+              <option value="samples">Samples / Loops</option>
+            </select>
+          </label>
+          <label>
+            Genre
+            <select name="genre">
+              <option value="hip hop">Hip hop</option>
+              <option value="rnb">RnB</option>
+              <option value="trapsoul">Trapsoul</option>
+              <option value="lofi">Lofi</option>
+              <option value="trap">Trap</option>
+            </select>
+          </label>
+          <label>
+            BPM
+            <input name="bpm" type="number" min="40" max="220" value="90" required>
+          </label>
+          <label>
+            Key
+            <input name="key" placeholder="F minor" required>
+          </label>
+          <label>
+            Price USD
+            <input name="price" type="number" min="0" step="0.01" value="49.99" required>
+          </label>
+          <label>
+            Audio file
+            <input name="audio" type="file" accept="audio/*">
+          </label>
+          <label>
+            Cover artwork
+            <input name="cover" type="file" accept="image/png,image/jpeg,image/webp">
+          </label>
+        </div>
+        <button class="button primary" type="submit">Upload and publish</button>
+        <p id="uploadStatus" class="note">Add audio, artwork, metadata, and publish when ready.</p>
+      </form>
+
+      <section class="studio-panel library-panel" id="library">
+        <div class="panel-heading">
+          <p class="section-kicker">Library</p>
+          <h2>Live on website</h2>
+        </div>
+        <div id="studioLibrary" class="studio-library"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="studio.js"></script>
+</body>
+</html>

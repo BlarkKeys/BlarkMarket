@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>blarkkeys Studio Login</title>
+  <meta name="description" content="Private blarkkeys studio login.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="studio-body login-body">
+  <main class="login-main">
+    <form id="studioLoginForm" class="login-panel">
+      <a class="brand" href="/">
+        <span class="brand-icon">bk</span>
+        <span>
+          <strong>blarkkeys studio</strong>
+          <small>private owner access</small>
+        </span>
+      </a>
+      <div>
+        <p class="section-kicker">Studio locked</p>
+        <h1>Enter your private studio code.</h1>
+        <p class="note">The upload studio is protected on the server. Set your own code in Render as `STUDIO_PIN`.</p>
+      </div>
+      <label>
+        Studio code
+        <input name="pin" type="password" inputmode="numeric" autocomplete="current-password" required>
+      </label>
+      <button class="button primary" type="submit">Unlock studio</button>
+      <p id="loginStatus" class="note">Only the owner should have this code.</p>
+    </form>
+  </main>
+
+  <script src="studio-login.js"></script>
+</body>
+</html>

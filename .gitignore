@@ -1,0 +1,6 @@
+bin/
+storage/
+**/storage/
+*.class
+*.log
+.env

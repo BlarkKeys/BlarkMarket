@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blarkkeys | Beatstore</title>
+  <meta name="description" content="Buy beats, instrumentals, samples, and loops from blarkkeys.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="site-body">
+  <canvas id="visualStage" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="/">
+      <span class="brand-icon">bk</span>
+      <span>
+        <strong>Blarkkeys</strong>
+        <small>Blark Keys Sound Supply</small>
+      </span>
+    </a>
+    <nav aria-label="Customer navigation">
+      <a href="#catalog">Catalog</a>
+      <a href="#checkout">Checkout</a>
+      <a class="studio-link" href="studio.html">Studio</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="store-hero">
+      <div class="hero-copy">
+        <p class="tagline">Hip hop / RnB / trapsoul / lofi / trap</p>
+        <h1>Keys for records that feel expensive after midnight.</h1>
+        <p class="hero-lead">Browse blarkkeys beats, instrumentals, samples, and loops. Preview the sound, choose a currency, and check out through a secure payment processor.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#catalog">Explore catalog</a>
+          <a class="button secondary" href="#checkout">Payment options</a>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-label="Animated blarkkeys audio artwork">
+        <div class="glass-orbit">
+          <div class="meter meter-a"></div>
+          <div class="meter meter-b"></div>
+          <div class="meter meter-c"></div>
+          <div class="key-row">
+            <span></span><i></i><span></span><i></i><span></span><span></span><i></i><span></span><i></i><span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="store-controls" id="catalog">
+      <div>
+        <p class="section-kicker">Live catalog</p>
+        <h2>Published from the studio</h2>
+      </div>
+      <div class="control-row">
+        <div class="tabs" role="tablist" aria-label="Catalog category">
+          <button class="tab active" data-category="all" type="button">All</button>
+          <button class="tab" data-category="beats" type="button">Beats</button>
+          <button class="tab" data-category="samples" type="button">Samples</button>
+        </div>
+        <label class="compact-field">
+          <span>Currency</span>
+          <select id="currency">
+            <option value="USD">USD</option>
+            <option value="ZAR">ZAR</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="NGN">NGN</option>
+            <option value="JPY">JPY</option>
+            <option value="AUD">AUD</option>
+            <option value="CAD">CAD</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section class="catalog-grid" id="catalogGrid" aria-live="polite"></section>
+
+    <section class="checkout-band" id="checkout">
+      <div>
+        <p class="section-kicker">Secure checkout</p>
+        <h2>Preview first. Pay through trusted processors.</h2>
+        <p>Customers should complete payment through PayPal Checkout or a PCI-compliant bank-card provider. This website does not store card numbers or banking details.</p>
+      </div>
+      <form id="checkoutForm" class="checkout-form">
+        <label>
+          Email
+          <input name="email" type="email" placeholder="buyer@example.com" required>
+        </label>
+        <label>
+          Payment method
+          <select name="method">
+            <option value="paypal">PayPal</option>
+            <option value="card_processor">Card / bank processor</option>
+          </select>
+        </label>
+        <button class="button primary" type="submit">Create order</button>
+        <p id="checkoutStatus" class="note">Choose a beat or sample to begin checkout.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>blarkkeys</span>
+    <span>beats / instrumentals / samples / loops</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
